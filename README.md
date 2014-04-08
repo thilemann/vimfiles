@@ -1,3 +1,5 @@
+This is still a work-in-progress!
+
 Configuration
 ========
 Add a _vimrc file in your home directory containing the following:

@@ -1,3 +1,5 @@
+This is still a work-in-progress!
+
 Configuration
 ========
 Add a _vimrc file in your home directory containing the following:
@@ -12,6 +14,14 @@ endfun
 set runtimepath=~/vimfiles,$VIMRUNTIME
 source ~/vimfiles/_vimrc
 ```
+
+Usage
+========
+More info will come!
+
+Plugins
+========
+More info will come!
 
 Credits
 ========

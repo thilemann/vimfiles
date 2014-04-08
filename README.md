@@ -2,12 +2,14 @@ Configuration
 ========
 Add a _vimrc file in your home directory containing the following:
 " Can return windows, unix or mac
+```
 fun! MySys()
   return "windows"
-  endfun
+endfun
 
-  set runtimepath=~/vimfiles,$VIMRUNTIME
-  source ~/vimfiles/_vimrc
+set runtimepath=~/vimfiles,$VIMRUNTIME
+source ~/vimfiles/_vimrc
+```
 
 Credits
 ========

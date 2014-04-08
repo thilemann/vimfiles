@@ -13,6 +13,14 @@ set runtimepath=~/vimfiles,$VIMRUNTIME
 source ~/vimfiles/_vimrc
 ```
 
+Usage
+========
+More info will come!
+
+Plugins
+========
+More info will come!
+
 Credits
 ========
 Special thanks goes out to Amir Salihefendic, where the initial configuration originates from.

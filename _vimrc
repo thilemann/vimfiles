@@ -10,32 +10,6 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-" Credits {{{
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic
-"       http://amix.dk - amix@amix.dk
-"
-" Version: 
-"       5.0 - 29/05/12 15:43:36
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-"
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " GENERAL {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
@@ -67,7 +41,7 @@ nmap <leader>w :w!<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load plugings through pathogen plugin manager
-" Just put plugins in .vimfiles/bundle folder
+" Just put plugins in ~/vimfiles/bundle folder
 execute pathogen#infect()
 
 " Show NERDTree when no filebuffer is open
@@ -93,15 +67,12 @@ autocmd FileType htm,html,xhtml,xml,django,eruby,mako let b:closetag_html_style=
 " set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" Highlight current cursor line
+" Highlight current cursor line and column
 :set cursorline
 
-" Highlight current cursor column
-" :set cursorcolumn
-
 " Commands to enable/disable cursor line/column
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-:nnoremap <Leader>cl :set cursorline! <CR>
+:nnoremap <Leader>cv :set cursorcolumn!<CR>
+:nnoremap <Leader>cl :set cursorline!<CR>
 
 " Cursor line/column highlighting
 :hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
@@ -215,11 +186,11 @@ if has("gui_running")
     colorscheme jellybeans
 
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 12
+        set guifont=Inconsolata\ 10
     elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h14
+        set guifont=Menlo\ Regular:h10
     elseif has("gui_win32")
-        set guifont=Consolas:h11:cANSI
+        set guifont=Consolas:h10:cANSI
     endif
 endif
 
@@ -330,9 +301,6 @@ set viminfo^=%
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " EDITING MAPPINGS {{{

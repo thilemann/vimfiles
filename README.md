@@ -1,8 +1,10 @@
 Configuration
 ========
 Add a _vimrc file in your home directory containing the following:
-" Can return windows, unix or mac
+
 ```
+" What system are we on?
+" Can return windows, unix or mac
 fun! MySys()
   return "windows"
 endfun

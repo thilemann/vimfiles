@@ -47,6 +47,9 @@ execute pathogen#infect()
 " Show NERDTree when no filebuffer is open
 autocmd vimenter * if !argc() | NERDTree | endif
 
+" Show UndoTree
+nnoremap <F5> :UndotreeToggle<cr>
+
 " Show NERDTree bookmarks
 let NERDTreeShowBookmarks=1
 
@@ -57,6 +60,17 @@ let NERDTreeIgnore=['\.o$', '\~$', 'NTUSER.DAT*', '\.lnk', '\.zip', '\.rar', '\.
 let g:tagbar_usearrows = 1
 let g:tagbar_ctags_bin = '~\vimfiles\ctags58\ctags.exe' 
 nnoremap <leader>l :TagbarToggle<CR>
+
+" Vim Airline show buffers as tabs when only one tab is open
+let g:airline#extensions#tabline#enabled = 1
+
+" Vim Airline tabline seperators
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" Vim Airline use powerline font symbols
+" Requires that a patched font is installed!
+let g:airline_powerline_fonts = 1
 
 " Automatically insert close tags in XML like files defined below
 autocmd FileType htm,html,xhtml,xml,django,eruby,mako let b:closetag_html_style=1
@@ -212,6 +226,9 @@ set ffs=dos,unix,mac
 "set nobackup
 "set nowb
 "set noswapfile
+
+set undofile
+set undodir=~/vimfiles/undodir//
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " TEXT, TAB AND INDENT RELATED {{{

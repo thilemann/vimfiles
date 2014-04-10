@@ -44,14 +44,20 @@ nmap <leader>w :w!<CR>
 " Just put plugins in ~/vimfiles/bundle folder
 execute pathogen#infect()
 
-" Show NERDTree when no filebuffer is open
+" Show NERDTred when no filebuffer is open
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " Show UndoTree
 nnoremap <F5> :UndotreeToggle<cr>
 
+" Show NERDTree
+nnoremap <leader>nt :NERDTreeToggle<cr>
+
 " Show NERDTree bookmarks
 let NERDTreeShowBookmarks=1
+
+" Close NERDTree when a file is opened
+let NERDTreeQuitOnOpen=1
 
 " NERDTree ignore files
 let NERDTreeIgnore=['\.o$', '\~$', 'NTUSER.DAT*', '\.lnk', '\.zip', '\.rar', '\.pdf', '\.exe', '\.msi', '\.apk', '\.pdf', '\.gz', '\.png', '\.jpg', '\.gif', '\.ico']
@@ -62,7 +68,7 @@ let g:tagbar_ctags_bin = '~\vimfiles\ctags58\ctags.exe'
 nnoremap <leader>l :TagbarToggle<CR>
 
 " Vim Airline show buffers as tabs when only one tab is open
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled=0
 
 " Vim Airline tabline seperators
 "let g:airline#extensions#tabline#left_sep = ' '

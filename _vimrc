@@ -62,7 +62,7 @@ let g:tagbar_ctags_bin = '~\vimfiles\ctags58\ctags.exe'
 nnoremap <leader>l :TagbarToggle<CR>
 
 " Vim Airline show buffers as tabs when only one tab is open
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 " Vim Airline tabline seperators
 "let g:airline#extensions#tabline#left_sep = ' '
@@ -93,13 +93,7 @@ set so=7
 :hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
 
 " Show tabs if two or more buffers are open
-set showtabline=1
-
-" turn on the wild menu
-set wildmenu
-
-" ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set showtabline=0
 
 "always show current position
 set ruler
@@ -165,11 +159,15 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Adds a sweet menu, press F4 to use it.
-source $VIMRUNTIME/menu.vim
+" ignore compiled files
 set wildmenu
+set wildmode=list:longest
+set wildignore=*.o,*~,*.pyc
 set cpo-=<
 set wcm=<C-Z>
+
+" Adds a sweet menu, press F4 to use it.
+source $VIMRUNTIME/menu.vim
 map <F4> :emenu <C-Z>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}

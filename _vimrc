@@ -10,7 +10,7 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-" Disable shortcuts in certain buffers (NERDTree) by replacing with a no-operation command
+" Disable shortcuts in certain buffers by replacing with a no-operation command
 " Dont execute buffer explorer in NERDTree buffer
 :autocmd FileType nerdtree nnoremap <buffer> <leader>be <Nop>
 

@@ -66,6 +66,9 @@ let NERDTreeQuitOnOpen=1
 " NERDTree ignore files
 let NERDTreeIgnore=['\.o$', '\~$', 'NTUSER.DAT*', '\.lnk', '\.zip', '\.rar', '\.pdf', '\.exe', '\.msi', '\.apk', '\.pdf', '\.gz', '\.png', '\.jpg', '\.gif', '\.ico']
 
+" CtrlP fuzzy file finder shortcuts
+nnoremap <leader>ct :CtrlP<cr>
+
 " Display tags of the current file ordered by scope
 let g:tagbar_usearrows = 1
 let g:tagbar_ctags_bin = '~\vimfiles\ctags58\ctags.exe' 

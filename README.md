@@ -15,6 +15,9 @@ set runtimepath=~/vimfiles,$VIMRUNTIME
 source ~/vimfiles/_vimrc
 ```
 
+Download and install the following system fonts to enable special characters in statusbar.
+https://github.com/eugeneching/consolas-powerline-vim
+
 Usage
 ========
 More info will come!

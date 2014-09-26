@@ -83,8 +83,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Vim Airline use powerline font symbols
 " Requires that a patched font is installed!
+" Install from 'fonts' directory.
 let g:airline_powerline_fonts = 1
-let g:airline_theme             = 'wombat'
+let g:airline_theme = 'wombat'
 
 " Automatically insert close tags in XML like files defined below
 autocmd FileType htm,html,xhtml,xml,django,eruby,mako let b:closetag_html_style=1
@@ -149,8 +150,14 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=3
 
- "Allows you to click around the text editor with your mouse to move the cursor
+ " Allows you to click around the text editor with your mouse to move the cursor
 set mouse=a
+
+" Set the selection to include character below cursor
+set selection=inclusive keymodel=startsel selectmode=key
+if has("mouse")
+        set mouse=a mousemodel=popup selectmode+=mouse
+endif
 
 " Highlights matching brackets in programming languages
 set showmatch

@@ -75,7 +75,7 @@ let g:tagbar_ctags_bin = '~\vimfiles\ctags58\ctags.exe'
 nnoremap <leader>l :TagbarToggle<CR>
 
 " Vim Airline show buffers as tabs when only one tab is open
-let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#tabline#enabled = 1
 
 " Vim Airline tabline seperators
 "let g:airline#extensions#tabline#left_sep = ' '
@@ -84,6 +84,7 @@ let g:airline#extensions#tabline#enabled=0
 " Vim Airline use powerline font symbols
 " Requires that a patched font is installed!
 let g:airline_powerline_fonts = 1
+let g:airline_theme             = 'wombat'
 
 " Automatically insert close tags in XML like files defined below
 autocmd FileType htm,html,xhtml,xml,django,eruby,mako let b:closetag_html_style=1
@@ -120,6 +121,9 @@ set hid
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+" map control-backspace to delete the previous word
+:imap <C-BS> <C-W>
 
 " Ignore case when searching
 set ignorecase
@@ -208,12 +212,15 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 
-    colorscheme jellybeans
-
+    colorscheme jellybeans 
+    
+    " Linux
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 10
+        set guifont=Inconsolata:h10:cANSI
+    " Mac OSX
     elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h10
+        set guifont=Menlo\ Regular:h10:cANSI
+    " Windows
     elseif has("gui_win32")
         set guifont=Consolas:h10:cANSI
     endif
@@ -235,7 +242,7 @@ set ffs=dos,unix,mac
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 "set nobackup
-"set nowb
+"set now
 "set noswapfile
 
 set undofile

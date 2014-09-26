@@ -222,7 +222,7 @@ if has("gui_running")
         set guifont=Menlo\ Regular:h10:cANSI
     " Windows
     elseif has("gui_win32")
-        set guifont=Consolas:h10:cANSI
+        set guifont=Powerline_Consolas:h11:cANSI
     endif
 endif
 

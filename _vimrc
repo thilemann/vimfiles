@@ -353,13 +353,10 @@ if has("mac") || has("macunix")
 endif
 
 " Press Shift-Space to escape out of insert mode (may not work on your system).
-:imap <S-Space> <Esc>
+:imap <C-Space> <Esc>
 
 " Shift-Space enters insert mode.
-:nmap <S-Space> i
-
-" Or just Space to enter insert mode.
-:nmap <Space> i
+:nmap <C-Space> i
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()

@@ -4,6 +4,18 @@
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
+" Set default working directory to home
+cd ~/
+
+" Auto change directory to the current directory of open buffer
+set acd
+
+" GUI is running or is about to start.
+if has("gui_running")
+    " Set the default size of the window
+    set lines=40 columns=150
+endif
+
 " Autoload vimrc when updated
 augroup myvimrc
     au!
@@ -85,6 +97,15 @@ let g:airline#extensions#tabline#enabled = 1
 " Requires that a patched font is installed!
 " Install from 'fonts' directory.
 let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" Set whitespace symbol
+let g:airline_symbols.whitespace = 'Ξ'
+
+" Set Vim Airline theme
 let g:airline_theme = 'wombat'
 
 " Automatically insert close tags in XML like files defined below
@@ -175,7 +196,11 @@ set number
 set smarttab
 
 " Lets you hide sections of code
+set foldenable
 set foldmethod=manual
+
+" Shortcut to fold tags with leader (usually \) + ft
+nnoremap <leader>ft Vatzf
 
 " No annoying sound on errors
 set noerrorbells
@@ -201,7 +226,6 @@ map <F4> :emenu <C-Z>
 syntax enable
 
 " Set colorscheme and options if available
-colorscheme desert
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -219,7 +243,7 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 
-    colorscheme jellybeans 
+    colorscheme molokai
     
     " Linux
     if has("gui_gtk2")
@@ -231,6 +255,8 @@ if has("gui_running")
     elseif has("gui_win32")
         set guifont=Powerline_Consolas:h11:cANSI
     endif
+else
+    colorscheme desert
 endif
 
 " Change cursor highlight color - overrides colorscheme
@@ -250,10 +276,12 @@ set ffs=dos,unix,mac
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 "set nobackup
 "set now
-"set noswapfile
 
 set undofile
 set undodir=~/vimfiles/undodir//
+
+set backupdir=~/vimfiles/backupdir//
+set directory=~/vimfiles/swpdir//
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " TEXT, TAB AND INDENT RELATED {{{

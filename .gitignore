@@ -1,2 +1,3 @@
-*.swp
+backupdir/*
+swpdir/*
 undodir/*
